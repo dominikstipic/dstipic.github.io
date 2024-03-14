@@ -56,3 +56,7 @@ body div {
 #myDiv {
   align-items: center;
 }
+
+li::marker {
+  color: red;
+}
