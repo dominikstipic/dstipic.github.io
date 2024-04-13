@@ -6,9 +6,37 @@
 </head>
 <body>
     <header>
-        <h1>Linux Scheduler - 08/04/2024</h1>
+        <h1>Linux Scheduler - 13/04/2024</h1>
     </header>
 
-    How to create a 
+    During work there is often a need to create scheduled jobs which are started periodically. Linux provides us with the  <b>crontab</b> utility whose purpose is to 
+    schedule jobs in the Linux. If we type the <b>crontab -e</b> command in our command line
+    we will get the configuration file where we can define our schedule. The schedule is defined by 5 parameters and they are: 
+    <ul>
+      <li>minute</li>
+      <li>hour</li>
+      <li>day of month</li>
+      <li>month</li>
+      <li>day in week</li>
+    </ul>
+    So for example, if we want to define a python job <it>job.py</it> to run every day at 12:00 during workdays we will put the following 
+    line in the crontab schedule configuration file: <br><br>
+    <b>0 12 * 1-5 job.py</b>
+    <br>
+    <br>
+    <a href="https://crontab.guru/#0_12_1_*_1-5">The crontab.guru</a> website could be used for help when defining our schedules. 
+    The cron configuration file can be inspected with the <b>crontab -l</b> command. 
+    Executions of our cron tasks can be found on Linux syslog which is located in the <b>/var/log/syslog</b> file. If we type the 
+    command <b>cat /var/log/syslog | grep CRON</b> we can locate the following line in our syslog file:
+    <br>
+    <br>
+    <i>Apr 13 09:32:01 doms-Aspire-A515-45 CRON[206541]: (doms) CMD (job.py)</i>
 
+    <br><br><br><br><br>
+
+    <h3>Links</h3>
+    <ul>
+      <li>
+        <a href="../index.html">Home</a>
+ 
 </body>
