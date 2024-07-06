@@ -1,0 +1,39 @@
+<!doctype html>
+<head>
+  <title>Dominik Stipić</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+  <div class="main">
+    <header>
+      <h1>Diplomacy</h1>
+    </header>
+
+    <div id="">
+      <img className="h-24 w-24 rounded-full mb-4" src="../figs/ja.jpg" alt="Profile Picture" />
+      <br>
+      <b>Dominik Stipic </b>   <input type="range" min="1" max="100" value="50" class="slider" id="slider">  <span id="sliderValue">50</span></p>
+    </div>
+    <br>
+    <br>
+    <div id="">
+      <img className="h-24 w-24 rounded-full mb-4" src="../figs/ja.jpg" alt="Profile Picture" />
+      <br>
+      <b>Dominik Stipic </b>   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div>
+    
+  </div>
+
+  <script>
+    const slider = document.getElementById('slider');
+    const sliderValueDisplay = document.getElementById('sliderValue');
+    slider.addEventListener('input', function() {
+      const sliderValue = this.value;
+      sliderValueDisplay.textContent = sliderValue;
+    }
+  
+  </script>
+
+</body>
