@@ -2,14 +2,14 @@
 <head>
   <title>Dominik Stipić</title>
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 <body>
   
   <div class="main">
     <header>
       <h1>Dominik Stipić</h1>
-      <img src="figs/ja.jpg" width="20%">
+      <img src="static/figs/ja.jpg" width="20%">
     </header>
 
     <h2>About Me</h2>
@@ -30,13 +30,13 @@
     <h2>Links</h2>
     <ul>
       <li>
-        <a href="pages/content.html">articles</a>
+        <a href="/content">articles</a>
       </li>
       <li>
-        <a href="pages/tips.html">tips</a>
+        <a href="/tips">tips</a>
       </li>
       <li>
-        <a href="pages/essays.html">essays</a>
+        <a href="/essays">essays</a>
       </li>
     </ul>
 <br>
@@ -51,7 +51,7 @@
         <a href="pages/skills.html">skills</a>
       </li>
       <li>
-        <a href="career/CV.pdf">curriculum vitae: with references to recommendation letters</a>
+        <a href="/dstipic/CV">curriculum vitae: with references to recommendation letters</a>
       </li>
       <li>
         <a href="articles/Motivation.pdf">motivation</a>
@@ -66,7 +66,6 @@
 ----------------------------------------------------------------------------
 <h2>Contact me</h2>
 <b>offical email</b>: dominikstipic@gmail.com <br>
-
 
 <br>
 <br>
