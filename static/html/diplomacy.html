@@ -1,0 +1,49 @@
+<!doctype html>
+<head>
+  <title>Dominik Stipić</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+  <div class="main">
+    <header>
+      <h1>Diplomacy</h1>
+    </header>
+
+    <h2>Attacking Rules:</h2> 
+    0-20: Verbal conflict<br>
+    20-40: <br>
+    40-60: <br>
+    60-80: Physical escalation<br>
+    80-100: Humilation<br>
+    100*: Rules do not apply<br>
+
+
+    <h2>Declared Wars</h2>
+    <div id="war">
+      <img className="h-24 w-24 rounded-full mb-4" src="../figs/unknown.png" alt="Profile" style="width:90px;height:90px;"/>
+      <br>
+      <b>Test </b>   </p>
+      <b>Score:</b> <input type="range" min="1" max="100" value="50" class="slider" id="slider">  <span id="sliderValue">50</span>
+      <br><br>
+      <b>Casus Belli: <i>unknown</i></b> <br><br>
+      <b>Allies: <i>aa</i></b>
+      <br>
+      <br>
+      <br>
+    </div>
+
+  </div>
+
+  <script>
+    function updateSliderValue(){
+      value = document.getElementById("slider").value;
+      sliderValue = document.getElementById("sliderValue");
+      sliderValue.textContent = value;
+    };
+    const sliderValueDisplay = document.getElementById('sliderValue').textContent
+    slider.addEventListener('input', updateSliderValue)
+  </script>
+
+</body>
