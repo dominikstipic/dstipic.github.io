@@ -4,10 +4,14 @@
   <title>Fitness</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-
+  <style>
+    h1 {
+        text-align: center; /* Centers text horizontally */
+    }
+  </style>
 </head>
 <body>
-
+  <h1 id="wait">Please wait!</h1>
   <div id="myDiv"></div>
 
   <script>
@@ -42,6 +46,8 @@
                       }
                     };
                     Plotly.newPlot('myDiv', [trace], layout);
+                    const element = document.getElementById('wait');
+                    element.style.display = 'none'; // Hides the element
                     })
                .catch(error => console.error('Error:', error));
   </script>
