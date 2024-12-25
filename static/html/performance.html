@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Plotly Chart</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> </head>
+<body>
+
+  <div id="myDiv"></div>
+
+  <script>
+    url = "http://64.226.98.170:81/"
+    const layout = {
+      title: 'Running Distance',
+      xaxis: {
+        type: 'date',
+        tickmode: 'linear',
+        dtick: 'M1', // Daily ticks
+        tickformat: '%b %d', // Abbreviated month and day
+        tickangle: -45 
+    }
+    };
+    fetch(url).then(response => response.json())
+              .then(rs => {
+                    dist = rs.data.map(r => r.distance)
+                    start_date = rs.data.map(r => new Date(r.start_date))
+                    var trace1 = {
+                      x: start_date,
+                      y: dist,
+                      type: 'scatter'
+                    };
+                    const trace = {
+                      x: start_date,
+                      y: dist,
+                      mode: 'lines+markers',
+                      type: 'scatter',
+                      line: {
+                        color: 'red',
+                        width: 1
+                      }
+                    };
+                    Plotly.newPlot('myDiv', [trace], layout);
+                    })
+               .catch(error => console.error('Error:', error));
+  </script>
+
+</body>
+</html>
