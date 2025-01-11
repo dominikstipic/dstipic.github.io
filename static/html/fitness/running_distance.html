@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fitness</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <style>
+    h1 {
+        text-align: center; /* Centers text horizontally */
+    }
+  </style>
+</head>
+<body>
+  <h1 id="wait">Please wait!</h1>
+  <div id="myDiv"></div>
+
+  <script>
+    url = "http://64.226.98.170:81/"
+    const layout = {
+      title: 'Running Distance',
+      xaxis: {
+        type: 'date',
+        tickmode: 'linear',
+        dtick: 'M1', // Daily ticks
+        tickformat: '%b %d', // Abbreviated month and day
+        tickangle: -45 
+    }
+    };
+    fetch(url).then(response => response.json())
+              .then(rs => {
+                    dist = rs.data.map(r => r.distance)
+                    start_date = rs.data.map(r => new Date(r.start_date))
+                    var trace1 = {
+                      x: start_date,
+                      y: dist,
+                      type: 'scatter'
+                    };
+                    const trace = {
+                      x: start_date,
+                      y: dist,
+                      mode: 'lines+markers',
+                      type: 'scatter',
+                      line: {
+                        color: 'red',
+                        width: 1
+                      }
+                    };
+                    Plotly.newPlot('myDiv', [trace], layout);
+                    const element = document.getElementById('wait');
+                    element.style.display = 'none'; // Hides the element
+                    })
+               .catch(error => console.error('Error:', error));
+  </script>
+
+
+<h3>Links</h3>
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+</ul>
+
+</body>
+</html>
