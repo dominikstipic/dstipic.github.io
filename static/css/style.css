@@ -60,3 +60,8 @@ body div {
 li::marker {
   color: red;
 }
+
+video {
+  max-width: 80%; /* Optional: for responsiveness */
+  max-height: 80%; /* Optional: for responsiveness */
+}

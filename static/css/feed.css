@@ -1,0 +1,81 @@
+.feed-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #7c0404;
+}
+
+.feed-item {
+    border-bottom: 1px solid #520707;
+    padding: 10px 0;
+    background-color: #6ec79a;
+}
+
+.feed-item:last-child {
+    border-bottom: none;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.feed-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #ddd; /* Placeholder */
+}
+
+.username {
+    font-weight: bold;
+}
+
+.timestamp {
+    color: #888;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+.content {
+    margin-left: 40px;
+    white-space: pre-line; /* Preserve line breaks */
+}
+
+.actions {
+    margin-left: 40px;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.actions button:hover {
+    color: #007bff; /* Example highlight color */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally within the container */
+    width: 200%; /* Adjust width as needed */
+    max-width: 600px; /* Set a maximum width */
+}
